@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% block body %}
+{% include './inc/searsh.html' %}
+
+<div id="card_contener" class="card-contener" style="min-height: 100vh;">
+    {% for i in all_anime %}
+        {% if "!Gamers" in i.aime_titel%}
+            <h1>{{ i.anime_titel }}</h1>
+        {% endif %}
+    {% endfor %}
+</div>
+
+{% endblock %}

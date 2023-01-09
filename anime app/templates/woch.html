@@ -1,0 +1,46 @@
+
+{% extends 'layout.html' %}
+{% block titel %}Woch page{% endblock %}
+{% block body %}
+<div class="searsh-colm"></div>
+<div class="card_contet_titel">
+    <h3>{{ anime_info.anime_titel }} && الحلقة: {{ epsode_num  }}</h3>
+</div>
+
+<div class="woch-contener">
+    <div class="server-contener">
+        {% for i in anime_info.anime_episodes_list[epsode_num-1].episode %}
+            <div onclick="server(this.title)" title="{{ anime_info.anime_episodes_list[epsode_num-1].episode[loop.index-1] }}">server {{ loop.index }}</div>
+        {% endfor %}
+    </div>
+    <div class="woch-space"> <iframe src="{{ anime_info.anime_episodes_list[epsode_num-1].episode[0] }}" frameborder="0" allowfullscreen></iframe></div>
+
+    
+    <div class="card_contet_titel">
+        <h3 style="font-size: 35px;">الحلقات</h3>
+    </div>
+
+    <div class="episode-contener">
+
+        {% for i in anime_info.anime_episodes_list %}
+        <a href="/woch-page/{{ anime_info.anime_titel }}-{{ loop.index }}/">
+            <div class="episode-card">
+                <div class="epesode-number">{{ loop.index}}</div>
+                <div class="episode-loge">
+                    <img src="{{ anime_info.anime_img }}" alt="">
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+
+    </div>
+</div>
+
+
+<script>
+    function server(id){
+        document.querySelector("iframe").src = id
+    }
+</script>
+
+{% endblock %}

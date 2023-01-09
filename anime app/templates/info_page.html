@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% block titel %}Info page{% endblock %}
+{% block body %}
+<div class="searsh-colm"></div>
+<div class="info-contener">
+    <div class="info">
+        <h1>{{info_data.anime_titel}}</h1>
+        <p>{{info_data.anime_story}}</p>
+        <h2>{{info_data.anime_genres}}</h2>
+        <h3>{{info_data.anime_info[0]}}</h3>
+        <h3>{{info_data.anime_info[1]}}</h3>
+        <h3>{{info_data.anime_info[2]}}</h3>
+        <h3>{{info_data.anime_info[3]}}</h3>
+        <h3>{{info_data.anime_info[4]}}</h3>
+        <h3>{{info_data.anime_info[5]}}</h3>
+        <h3>{{info_data.anime_info[6]}}</h3>
+    </div>
+    <div class="img-info-contener"><img src="{{ info_data.anime_img }}" alt=""></div>
+</div>
+
+<div class="card_contet_titel">
+    <h3>الحلقات</h3>
+</div>
+
+<div class="episode-contener">
+    {% for i in info_data.anime_episodes_list %}
+        <a href="/woch-page/{{ info_data.anime_titel }}-{{ loop.index }}/">
+            <div class="episode-card">
+            <div class="epesode-number">{{ loop.index }}</div>
+            <div class="episode-loge">
+                <img src="{{ info_data.anime_img }}" alt="">
+            </div>
+        </a>
+        </div>
+        
+    {% endfor %}
+</div>
+
+{% endblock %}

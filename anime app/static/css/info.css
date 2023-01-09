@@ -1,0 +1,96 @@
+
+.info-contener{
+    width: 100%;
+    height: auto;
+    display: flex;
+    color: white;
+}
+
+.img-info-contener{
+    width: 30%;
+    height: auto;
+    text-align: center;
+}
+.img-info-contener img{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin-top: 25px;
+}
+
+.info{
+    width: 70%;
+    height: auto;
+    text-align-last: right;
+}
+.info h1{
+    padding: 10px 15px;
+    margin: 10px 0;
+}
+.info h2{
+    padding: 10px 15px;
+    margin: 10px 0;
+}
+.info h3{
+    padding: 7px 15px;
+    margin: 5px 0;
+}
+.info p{
+    padding: 5px 15px;
+    margin: 5px 0;
+}
+
+
+.episode-contener{
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.episode-card{
+    width: 250px;
+    text-align: center;
+    height: 250px;
+    position: relative;
+}
+.epesode-number{
+    width: 40px;
+    height: 40px;
+    background-color: #000000bb;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    top: 8%;
+    left: 20%;
+}
+.episode-loge{
+    width: 100%;
+    height: auto;
+}
+.episode-loge img{
+    cursor: pointer;
+    width: 180px;
+    height: 200px;
+    border-radius: 10px;
+}
+.episode-loge img:hover{
+    width: 200px;
+    height: 220px;
+}
+
+@media screen and (max-width:880px) {
+    .info-contener{
+        display: block;
+    }
+    .info{
+        width: 100%;
+    }
+    .img-info-contener{
+        width: 100%;
+    }
+}

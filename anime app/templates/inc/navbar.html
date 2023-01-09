@@ -1,0 +1,42 @@
+
+    <!------------------ header ------------------>
+    <div class="header_contener">
+        <div  onclick="click_nav()" id="nav_log" class="nav_log">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="titel_contenr"><h1><span>N</span>ihon <span>no</span> Anime  <span class="animation_titel"><img src="{{url_for('static',filename= 'imges/logo.jpeg')}}" alt=""></span></h1></div>
+        <nav id="nav_content">
+            <ul>
+                <a href="/"><li>الرئسية</li></a>
+                <a href="/list-page"><li>القائمة</li></a>
+                <a href="/anime-movei"><li>افلام</li></a>
+                <a href="/anime-seson"><li>يعرض الان</li></a>
+            </ul>
+        </nav>
+    </div>
+
+
+    <script>
+        
+        let check_nav = true
+        
+        function click_nav(){
+            console.log("celkabol")
+            let nav_log = document.getElementById("nav_log")
+            let nav_content = document.getElementById("nav_content")
+            if (check_nav == true) {
+                nav_log.style.right="250px"
+                nav_log.style.transform="rotate(90deg)"
+                nav_content.style.right="1px"
+                check_nav = false
+            }else{
+                nav_log.style.right="1px"
+                nav_log.style.transform="rotate(180deg)"
+                nav_content.style.right="-250px"
+                check_nav = true
+            }
+        }
+        
+    </script>

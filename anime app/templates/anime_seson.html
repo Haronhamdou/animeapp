@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% block titel %}Seson page{% endblock %}
+{% block body %}
+<div class="searsh-colm"></div>
+<div class="searsh-colm"></div>
+<div class="card-contener">
+    {% for ii in anime_showing_now %}
+        <div class="card">
+            <div class="anime-type">{{ ii.anime_info[0] }}</div>
+            <a href="/anime/{{ ii.anime_titel }}/">
+                <div class="card-img">
+                    <img src="{{ ii.anime_img }}" alt="">
+                </div>
+            </a>
+            <a href="/anime/{{ ii.anime_titel }}">
+                <div class="card-titel-contenr">
+                    {{ ii.anime_titel }}
+                </div>
+            </a>   
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

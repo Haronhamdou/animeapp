@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+    font-size: medium;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body{
+    max-width: 100%;
+    overflow-x: hidden;
+}
+.contener{
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    overflow-x: hidden;
+    background-color: #201e1ee5;
+    background-image: url(../imges/con.jpeg);
+    background-size: cover;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+.nav_log{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    right: 1px;
+    display: none;
+}
+.nav_log div{
+    width: 100%;
+    height: 5px;
+    margin-top: 5px;
+    background-color: white;
+}
+.header_contener{
+    width: 100%;
+    height: auto;
+    color: white;
+    margin: auto;
+    background-image: linear-gradient(black,#000000d0);
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.titel_contenr{
+    width: 30%;
+    height: 80px;
+    text-align: center;
+}
+.titel_contenr h1{
+    font-size: 25px;
+    line-height: 80px;
+    position: relative;
+}
+.titel_contenr h1 span{
+    font-size: 35px;
+    color: red;
+}
+.animation_titel{
+    position: absolute;
+    animation-name: titel_animation;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+.animation_titel img{
+    margin-left: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+nav{
+    width: 70%;
+    height: 80px;
+}
+nav ul{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+nav ul li{
+    list-style-type: none;
+    width: 150px;
+    height: 50px;
+    margin: 0 5px;
+    line-height: 50px;
+    text-align: center;
+}
+li:hover{
+    border-bottom: 1px solid white;
+}
+
+@media screen and (max-width:840px){
+    .titel_contenr{
+        width: 100%;
+    }
+    .nav_log{
+        transition: 1s;
+        display: block;
+        right: 1px;
+        z-index: 3;
+    }
+    nav{
+        width: 250px;
+        transition: 1s;
+        position: absolute;
+        top: 0;
+        right: -250px;
+        z-index: 2;
+    }
+    nav ul{
+        width: 100%;
+        display: block;
+        padding-bottom: 20px;
+        margin-top: 0;
+        background-color: #000000c7;
+    }
+    nav ul li{
+        margin: auto;
+    }
+}
+
+
+
+
+@keyframes titel_animation {
+    from{
+        left: 0;
+        transform: rotate(180deg);
+    }
+    to{
+        left: 320px;
+        transform: rotate(360deg);
+    }
+    
+}

@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+{% block titel %}Home page{% endblock %}
+{% block body %}
+{% include './inc/slyder.html' %}
+<div style="width: 100%; height: 450px; text-align: center;"></div>
+<div class="card_contet_titel">
+    <h3>اخر الحلقات المضافة</h3>
+</div>
+
+
+<div class="card-contener">
+    {% for i in episode_new %}
+        <div class="card">
+            <a href="/woch-page/{{ i.anime.anime_titel }}-{{ i.episode_number }}/">
+                <div class="card-img">
+                    <img src="{{ i.anime.anime_img }}" alt="">
+                </div>
+            </a>
+            <a href="/anime/{{ i.anime.anime_titel }}">
+                <div class="card-titel-contenr">
+                    {{ i.anime.anime_titel }}
+                </div>
+            </a>   
+        </div>
+    {% endfor %}
+</div>
+
+<div class="card_contet_titel">
+    <h3>اخر الانميات المضافة</h3>
+</div>
+<div class="card-contener">
+    {% for ii in anime_last_add %}
+        <div class="card">
+            <div class="anime-type">{{ ii.anime_info[0] }}</div>
+            <a href="/anime/{{ ii.anime_titel }}/">
+                <div class="card-img">
+                    <img src="{{ ii.anime_img }}" alt="">
+                </div>
+            </a>
+            <a href="/anime/{{ ii.anime_titel }}">
+                <div class="card-titel-contenr">
+                    {{ ii.anime_titel }}
+                </div>
+            </a>   
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+
+.woch-contener{
+    width: 100%;
+    height: auto;
+    color: white;
+}
+
+.server-contener{
+    width: 90%;
+    padding: 20px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.server-contener div{
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    background-color: white;
+    color: #000000b7;
+    margin: 5px;
+    line-height: 50px;
+}
+.server-contener div:hover{
+    background-color: black;
+    color: white;
+}
+.woch-space{
+    padding: 0 10px;
+    width: 90%;
+    text-align: center;
+    margin: auto;
+    height: 550px;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.woch-space iframe{
+    width: 100%;
+    height: 450px;
+    margin-top: 50px;
+    border-radius: 10px;
+}

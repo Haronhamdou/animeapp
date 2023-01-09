@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% block titel %}List page{% endblock %}
+{% block body %}
+{% include './inc/searsh.html' %}
+<div class="card-contener">
+    {% if info == [] %}
+    <div class="card_contet_titel">
+        <h3>page not found</h3>
+    </div>
+    {% endif %}
+
+{% for i in info %}
+<a href="/anime/{{ i.anime_titel }}">
+    <div class="card">
+        <div class="anime-type">{{ i.anime_info[0] }}</div>
+        <div class="card-img">
+            <img src="{{ i.anime_img }}" alt="">
+        </div>
+
+        <div class="card-titel-contenr">
+            {{ i.anime_titel }}
+        </div>
+    </div>
+</a>
+
+{% endfor %}
+</div>
+
+<div class="next_befour_contener">
+    {% if next_id > 1 %}
+    <a href="/list-page/{{next_id -1}}/"><div id="befour" class="befour">السابق</div></a>
+    {% endif %}
+    {% if info != [] %}
+        <a href="/list-page/{{next_id +1}}/"><div id="next" class="next">التالي</div></a>
+    {% endif %}
+</div>
+<h1>{{ lenth }}</h1>
+{% endblock %}
